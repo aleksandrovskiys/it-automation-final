@@ -19,23 +19,23 @@ def generate_email(sender, recepient, subject, body, abs_path):
                            maintype=mimetype,
                            subtype=mimesubtype,
                            filename=basename)
+	return message
 
 
-def send_email(sender, mail_pass, message):
-	mail_server = smtplib.SMTP_SSL('localhost')
+def send_email(login, mail_pass, message):
+	mail_server = smtplib.SMTP('localhost')
 	mail_server.connect()
 	mail_server.set_debuglevel(1)
-	res = mail_server.login(sender, mail_pass)
-	print(res)
+	#res = mail_server.login(login, mail_pass)
+	#print(res)
 	mail_server.send_message(message)
 	mail_server.quit()
 
 if __name__ == '__main__':
 	sender = 'automation@example.com'
-	recepient = 'student-04-2cc6736db7e5@example.com'
+	recepient = 'student-00-1071babbf114@example.com'
 	subject = 'Upload Completed - Online Fruit Store'
 	body = 'All fruits are uploaded to our website successfully. A detailed list is attached to this email.'
 	abs_path = path.abspath('processed.pdf')
 	message = generate_email(sender, recepient, subject, body, abs_path)
-	print(message)
-	send_email(sender, 'CB587ybqxZF', message)
+	send_email(recepient, 'CB587ybqxZF', message)
