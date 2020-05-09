@@ -11,4 +11,3 @@ if __name__ == "__main__":
 	for filename in images:
 		with open(os.path.join(image_dir, filename), 'rb') as opened_file:
 			r = requests.post(url, files={'file': opened_file})
-			print(r.status_code)
