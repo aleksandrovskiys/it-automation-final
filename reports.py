@@ -9,8 +9,11 @@ def generate_report(fruits_list):
 	report = SimpleDocTemplate("processed.pdf")
 	styles = getSampleStyleSheet()
 	report_title = Paragraph("Processed Update on {}".format(datetime.today().strftime('%Y-%m-%d')), styles["h1"])
-	print(datetime.today().strftime('%Y-%m-%d'))
-	report.build([report_title])
+	report_body = "<br/>"
+	for fruit in fruits_list:
+		report_body += r"name: {}<br/>weight: {}<br/><br/>".format(fruit['name'], fruit['weight'])
+	body_paragraph = Paragraph(report_body, styles['Normal'])
+	report.build([report_title, body_paragraph])
 
 
 if __name__ == '__main__':
