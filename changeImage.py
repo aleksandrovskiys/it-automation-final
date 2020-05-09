@@ -10,5 +10,4 @@ if __name__ == "__main__":
 		if ext == '.tiff':
 			im = Image.open(os.path.join(image_dir, infile))
 			converted = im.convert('RGB')
-			converted.resize((600, 400))
-			converted.save(os.path.join(image_dir, filename + '.jpg'), 'JPEG', quality=100)
+			converted.resize((600, 400)).save(os.path.join(image_dir, filename + '.jpeg'), 'JPEG', quality=100)
