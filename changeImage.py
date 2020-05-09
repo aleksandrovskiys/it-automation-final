@@ -3,8 +3,7 @@ from PIL import Image
 import os
 
 if __name__ == "__main__":
-	home_dir = os.path.expanduser('~')
-	image_dir = os.path.join(home_dir, 'supplier-data/images')
+	image_dir = 'supplier-data/images'
 	for infile in os.listdir(image_dir):
 		filename, ext = os.path.splitext(infile)
 		if ext == '.tiff':
