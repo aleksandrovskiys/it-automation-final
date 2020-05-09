@@ -6,7 +6,7 @@ from reportlab.lib.styles import getSampleStyleSheet
 
 
 def generate_report(fruits_list):
-	report = SimpleDocTemplate("processed.pdf")
+	report = SimpleDocTemplate("/tmp/processed.pdf")
 	styles = getSampleStyleSheet()
 	report_title = Paragraph("Processed Update on {}".format(datetime.today().strftime('%Y-%m-%d')), styles["h1"])
 	report_body = "<br/>"
