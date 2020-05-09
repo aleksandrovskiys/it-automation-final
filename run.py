@@ -20,5 +20,5 @@ if __name__ == '__main__':
 		with open(os.path.join(descr_dir, filename), 'r', encoding='utf-8') as file:
 			description = file.read()
 			generated_json = get_json_from_description(description, os.path.splitext(str(filename))[0] + '.jpeg')
-			r = requests.post('http://34.67.128.219/fruits/', json=generated_json)
+			r = requests.post('http://34.72.103.213/fruits/', json=generated_json)
 
